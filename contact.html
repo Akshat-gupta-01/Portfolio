@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact | Akshat Gupta</title>
+  <link rel="stylesheet" href="css/nav.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #1f1c2c 0%, #3b2d6e 50%, #928dab 100%);
+      color: white;
+      min-height: 100vh;
+    }
+    a { color: #af5bfb; text-decoration: none; transition: color 0.3s; }
+    a:hover { color: #d2a8ff; }
+
+    .container {
+      max-width: 700px;
+      margin: 60px auto;
+      padding: 40px;
+      background: #2b2250;
+      border-radius: 24px;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.45);
+      text-align: center;
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+
+    .page-title {
+      font-size: 30px;
+      font-weight: 700;
+      margin-bottom: 32px;
+      padding: 12px 30px;
+      background: #af5bfb;
+      border-radius: 50px;
+      display: inline-block;
+      box-shadow: 0 0 18px #af5bfb;
+    }
+
+    .contact-list {
+      list-style: none;
+      padding: 0;
+      font-size: 17px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .contact-list li {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(175,91,251,0.2);
+      border-radius: 14px;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      transition: background 0.3s;
+    }
+    .contact-list li:hover {
+      background: rgba(175,91,251,0.12);
+    }
+    .contact-list .icon {
+      font-size: 22px;
+      min-width: 28px;
+    }
+    .contact-list .label {
+      font-size: 12px;
+      color: #9b8ec4;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .contact-list .value { font-size: 15px; font-weight: 600; }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <nav class="top-nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="projects.html">Projects & Hackathons</a></li>
+      <li><a href="certifications.html">Certifications & Internship</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <h2 class="page-title">Contact Me</h2>
+    <ul class="contact-list">
+      <li>
+        <span class="icon">📧</span>
+        <div>
+          <div class="label">Email</div>
+          <div class="value"><a href="mailto:akshatmanug@gmail.com">akshatmanug@gmail.com</a></div>
+        </div>
+      </li>
+      <li>
+        <span class="icon">📞</span>
+        <div>
+          <div class="label">Phone</div>
+          <div class="value"><a href="tel:+919140559765">+91 9140559765</a></div>
+        </div>
+      </li>
+      <li>
+        <span class="icon">💼</span>
+        <div>
+          <div class="label">LinkedIn</div>
+          <div class="value"><a href="https://www.linkedin.com/in/akshat-gupta-57855a294" target="_blank">akshat-gupta-57855a294</a></div>
+        </div>
+      </li>
+      <li>
+        <span class="icon">🐙</span>
+        <div>
+          <div class="label">GitHub</div>
+          <div class="value"><a href="https://github.com/Akshat-gupta-01" target="_blank">Akshat-gupta-01</a></div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</body>
+</html>

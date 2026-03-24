@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects | Akshat Gupta</title>
+  <link rel="stylesheet" href="css/nav.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #1f1c2c 0%, #3b2d6e 50%, #928dab 100%);
+      color: #fff;
+      min-height: 100vh;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1050px;
+      margin: 50px auto;
+      padding: 0 30px 80px;
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+
+    /* Section titles */
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 30px;
+      margin-top: 60px;
+    }
+    .section-header:first-child { margin-top: 0; }
+    .section-badge {
+      font-size: 26px;
+      font-weight: 700;
+      background: #af5bfb;
+      display: inline-block;
+      padding: 8px 28px;
+      border-radius: 30px;
+      box-shadow: 0 0 18px #af5bfb88;
+    }
+    .section-line {
+      flex: 1;
+      height: 2px;
+      background: linear-gradient(90deg, rgba(175,91,251,0.5), transparent);
+      border-radius: 2px;
+    }
+
+    /* Grid */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 26px;
+    }
+
+    /* Cards */
+    .card {
+      background: #2b2250;
+      border-radius: 20px;
+      padding: 26px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+      border: 1px solid rgba(175,91,251,0.15);
+      transition: transform 0.3s, box-shadow 0.3s;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 40px rgba(175,91,251,0.25);
+    }
+
+    .card-icon { font-size: 34px; }
+
+    .card h2 {
+      font-size: 20px;
+      font-weight: 700;
+      color: #f1eaff;
+    }
+
+    .card-meta {
+      font-size: 12px;
+      color: #a08dc0;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .card-meta span { font-size: 14px; }
+
+    .card p {
+      font-size: 13.5px;
+      line-height: 1.75;
+      color: #c9bfea;
+      flex: 1;
+    }
+    .card ul {
+      padding-left: 16px;
+      font-size: 13px;
+      line-height: 1.8;
+      color: #c9bfea;
+      flex: 1;
+    }
+    .card ul li { margin-bottom: 4px; }
+
+    .tech-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+    .tag {
+      background: rgba(175,91,251,0.18);
+      border: 1px solid #af5bfb;
+      color: #d2a8ff;
+      font-size: 11px;
+      padding: 3px 11px;
+      border-radius: 20px;
+      font-weight: 600;
+    }
+
+    .card-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 4px;
+    }
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      color: #af5bfb;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 5px 14px;
+      border-radius: 20px;
+      border: 1px solid rgba(175,91,251,0.35);
+      transition: background 0.3s, color 0.3s;
+    }
+    .card-link:hover {
+      background: #af5bfb;
+      color: #fff;
+    }
+
+    /* Internship card accent */
+    .internship-card {
+      border-left: 3px solid #af5bfb;
+    }
+
+    /* Hackathon card accent */
+    .hackathon-card {
+      border-top: 3px solid #af5bfb;
+    }
+
+    /* GitHub CTA */
+    .github-cta {
+      margin-top: 70px;
+      background: linear-gradient(135deg, rgba(175,91,251,0.15), rgba(59,45,110,0.5));
+      border: 1px solid rgba(175,91,251,0.35);
+      border-radius: 24px;
+      padding: 48px 40px;
+      text-align: center;
+      backdrop-filter: blur(8px);
+    }
+    .github-cta .gh-icon {
+      font-size: 56px;
+      margin-bottom: 16px;
+      display: block;
+    }
+    .github-cta h2 {
+      font-size: 26px;
+      font-weight: 700;
+      color: #f1eaff;
+      margin-bottom: 10px;
+    }
+    .github-cta p {
+      font-size: 15px;
+      color: #c9bfea;
+      margin-bottom: 28px;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.7;
+    }
+    .github-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #af5bfb;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 16px;
+      padding: 14px 36px;
+      border-radius: 40px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 0 24px #af5bfb88;
+    }
+    .github-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 32px #af5bfbaa;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      .container { padding: 0 16px 60px; }
+      .section-badge { font-size: 20px; padding: 8px 18px; }
+      .github-cta { padding: 36px 20px; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="top-nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="projects.html" class="active">Projects & Hackathons</a></li>
+      <li><a href="certifications.html">Certifications & Internship</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+
+    <!-- ===== PROJECTS ===== -->
+    <div class="section-header">
+      <div class="section-badge">🚀 Projects</div>
+      <!-- <div class="section-line"></div> -->
+    </div>
+
+    <div class="cards-grid">
+
+      <div class="card">
+        <div class="card-icon">🔗</div>
+        <h2>LinkSnap</h2>
+        <p>A modern URL shortener with an integrated QR code generator. Allows users to shorten long URLs and instantly generate scannable QR codes for easy sharing.</p>
+        <div class="tech-tags">
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+          <span class="tag">JavaScript</span>
+        </div>
+        <div class="card-links">
+          <a href="https://url-sh-qr.netlify.app/" class="card-link" target="_blank">🌐 Live Demo</a>
+          <a href="https://github.com/Akshat-gupta-01" class="card-link" target="_blank">⌥ GitHub</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">🛒</div>
+        <h2>BulkBuy</h2>
+        <p>A group buying web application enabling vendors and suppliers to manage products. Features role-based dashboards, real-time group cart management, and a multi-step checkout process.</p>
+        <div class="tech-tags">
+          <span class="tag">Python</span>
+          <span class="tag">Flask</span>
+          <span class="tag">SQLAlchemy</span>
+          <span class="tag">SQLite</span>
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+          <span class="tag">JavaScript</span>
+        </div>
+        <div class="card-links">
+          <a href="https://bulkbuy-group-purchase-app.onrender.com/" class="card-link" target="_blank">🌐 Live Demo</a>
+          <a href="https://github.com/Akshat-gupta-01" class="card-link" target="_blank">⌥ GitHub</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">🏦</div>
+        <h2>Bank Management System</h2>
+        <p>A GUI-based Bank Management System in Python for managing bank accounts using Tkinter and file handling. Demonstrates core banking operations including deposits, withdrawals, and balance enquiry.</p>
+        <div class="tech-tags">
+          <span class="tag">Python</span>
+          <span class="tag">Tkinter</span>
+          <span class="tag">File Handling</span>
+        </div>
+        <div class="card-links">
+          <a href="https://github.com/Akshat-gupta-01" class="card-link" target="_blank">⌥ GitHub</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">🏨</div>
+        <h2>Hotel Booking System</h2>
+        <p>A console-based Hotel Booking System built in Java demonstrating Object-Oriented Programming concepts. Supports room viewing, search by category (Standard, Deluxe, Suite), booking, cancellations, and simulated payment processing using file-based persistence.</p>
+        <div class="tech-tags">
+          <span class="tag">Java</span>
+          <span class="tag">OOP</span>
+          <span class="tag">ArrayList</span>
+          <span class="tag">File I/O</span>
+        </div>
+        <div class="card-links">
+          <a href="https://github.com/Akshat-gupta-01" class="card-link" target="_blank">⌥ GitHub</a>
+        </div>
+      </div>
+      
+    </div>
+    <!-- ===== GITHUB CTA ===== -->
+    <div class="github-cta">
+      <span class="gh-icon">🐙</span>
+      <h2>Want to See More?</h2>
+      <p>Explore all my repositories, open-source contributions, and side projects on GitHub. New projects added regularly!</p>
+      <a href="https://github.com/Akshat-gupta-01" class="github-btn" target="_blank">
+        View All Projects on GitHub &nbsp;→
+      </a>
+    </div>
+    
+    <!-- ===== HACKATHONS ===== -->
+    <div class="section-header">
+      <div class="section-badge">⚡ Hackathons</div>
+      <!-- <div class="section-line"></div> -->
+    </div>
+
+    <div class="cards-grid">
+
+      <div class="card hackathon-card">
+        <div class="card-icon">🤖</div>
+        <h2>AKTU AI Tech Hackathon 2025</h2>
+        <div class="card-meta"><span>📅</span> July 25, 2025 &nbsp;|&nbsp; <span>⏱️</span> 24-Hour Sprint</div>
+        <ul>
+          <li>Developed an AI-powered application using Python and machine learning models to solve real-world business challenges</li>
+          <li>Integrated ChatGPT API for natural language processing features and enhanced user interaction</li>
+          <li>Collaborated in a 4-member team to design, prototype, and present a complete technical solution within 24 hours</li>
+        </ul>
+        <div class="tech-tags">
+          <span class="tag">Python</span>
+          <span class="tag">Machine Learning</span>
+          <span class="tag">ChatGPT API</span>
+          <span class="tag">NLP</span>
+        </div>
+      </div>
+
+      <div class="card hackathon-card">
+        <div class="card-icon">🌐</div>
+        <h2>Web Development Hackathon</h2>
+        <div class="card-meta"><span>📅</span> July 25–27, 2025 &nbsp;|&nbsp; <span>🏆</span> TuteDude</div>
+        <ul>
+          <li>Built a full-stack web application using HTML5, CSS, JavaScript, and Flask backend with database connectivity</li>
+          <li>Designed responsive UI/UX with modern front-end frameworks ensuring cross-browser compatibility</li>
+          <li>Implemented user authentication, session management, and data validation for a secure web application</li>
+        </ul>
+        <div class="tech-tags">
+          <span class="tag">HTML5</span>
+          <span class="tag">CSS</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">Flask</span>
+          <span class="tag">MySQL</span>
+        </div>
+      </div>
+
+    </div>
+
+    
+
+
+  </div>
+</body>
+</html>

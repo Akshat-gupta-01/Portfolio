@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Education | Akshat Gupta</title>
+  <link rel="stylesheet" href="css/nav.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #1f1c2c 0%, #3b2d6e 50%, #928dab 100%);
+      color: white;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 0 30px 60px;
+      animation: fadeIn 0.8s ease-out;
+    }
+
+    .page-title {
+      font-size: 32px;
+      font-weight: 700;
+      background: #af5bfb;
+      padding: 12px 35px;
+      border-radius: 40px;
+      display: inline-block;
+      margin-bottom: 36px;
+      box-shadow: 0 0 18px #af5bfb;
+    }
+
+    .edu-card {
+      background: #2b2250;
+      padding: 28px 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+      margin-bottom: 24px;
+      border-left: 4px solid #af5bfb;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .edu-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 36px rgba(175,91,251,0.2);
+    }
+    .edu-card h2 {
+      font-size: 22px;
+      color: #f1eaff;
+      margin-bottom: 6px;
+    }
+    .edu-card .institution {
+      font-size: 15px;
+      color: #c9bfea;
+      margin-bottom: 4px;
+    }
+    .edu-card .field {
+      font-size: 14px;
+      color: #af5bfb;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .year-badge {
+      background: #5c49f2;
+      display: inline-block;
+      padding: 5px 16px;
+      font-size: 13px;
+      border-radius: 20px;
+      font-weight: 600;
+    }
+
+    .sub-school {
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    .sub-school + .sub-school { margin-top: 14px; padding-top: 14px; }
+
+    .sub-school h3 { font-size: 17px; color: #f1eaff; margin-bottom: 4px; }
+    .sub-school p  { font-size: 14px; color: #c9bfea; margin-bottom: 8px; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @media (max-width: 600px) {
+      .container { padding: 0 16px 60px; }
+      .page-title { font-size: 24px; padding: 10px 22px; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="top-nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="education.html" class="active">Education</a></li>
+      <li><a href="projects.html">Projects & Hackathons</a></li>
+      <li><a href="certifications.html">Certifications & Internship</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <div class="page-title">My Education</div>
+
+    <!-- University -->
+    <div class="edu-card">
+      <h2>Bachelor of Technology (B.Tech)</h2>
+      <div class="field">Computer Science & Engineering (CSE)</div>
+      <div class="institution">Dr. A.P.J. Abdul Kalam Technical University (AKTU)</div>
+      <span class="year-badge">2023 – 2027</span>
+    </div>
+
+    <!-- Schools -->
+    <div class="edu-card">
+      <h2>School Education</h2>
+
+      <div class="sub-school">
+        <h3>Jawahar Navodaya Vidyalaya, Ayodhya</h3>
+        <p>Secondary & Senior Secondary Education</p>
+        <span class="year-badge">2016 – 2023</span>
+      </div>
+
+      <div class="sub-school">
+        <h3>St. Peter's School, Akbarpur</h3>
+        <p>Primary Education</p>
+        <span class="year-badge">2010 – 2016</span>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

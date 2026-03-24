@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Certifications & Internship | Akshat Gupta</title>
+  <link rel="stylesheet" href="css/nav.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #1f1c2c 0%, #3b2d6e 50%, #928dab 100%);
+      color: #fff;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 50px auto;
+      padding: 0 30px 60px;
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+
+    .page-title {
+      font-size: 32px;
+      font-weight: 700;
+      background: #af5bfb;
+      display: inline-block;
+      padding: 10px 32px;
+      border-radius: 30px;
+      margin-bottom: 40px;
+      box-shadow: 0 0 18px #af5bfb;
+    }
+
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .cert-card {
+      background: #2b2250;
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+      border-left: 4px solid #af5bfb;
+      transition: transform 0.3s, box-shadow 0.3s;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .cert-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(175,91,251,0.2);
+    }
+
+    .cert-icon { font-size: 30px; }
+
+    .cert-card h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: #f1eaff;
+      line-height: 1.4;
+    }
+
+    .cert-issuer {
+      font-size: 13px;
+      color: #af5bfb;
+      font-weight: 600;
+    }
+
+    .cert-date {
+      font-size: 12px;
+      color: #9b8ec4;
+    }
+
+    .cert-badge {
+      display: inline-block;
+      background: rgba(175,91,251,0.2);
+      border: 1px solid rgba(175,91,251,0.5);
+      color: #d2a8ff;
+      font-size: 11px;
+      padding: 3px 10px;
+      border-radius: 12px;
+      font-weight: 600;
+      margin-top: 4px;
+      width: fit-content;
+    }
+
+    /* Section titles */
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 30px;
+      margin-top: 60px;
+    }
+    .section-header:first-child { margin-top: 0; }
+    .section-badge {
+      font-size: 26px;
+      font-weight: 700;
+      background: #af5bfb;
+      display: inline-block;
+      padding: 8px 28px;
+      border-radius: 30px;
+      box-shadow: 0 0 18px #af5bfb88;
+    }
+    .section-line {
+      flex: 1;
+      height: 2px;
+      background: linear-gradient(90deg, rgba(175,91,251,0.5), transparent);
+      border-radius: 2px;
+    }
+    .section-label {
+      font-size: 20px;
+      font-weight: 700;
+      color: #d2a8ff;
+      margin: 36px 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid rgba(175,91,251,0.3);
+    }
+    /* Grid */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 26px;
+    }
+
+    /* Cards */
+    .card {
+      background: #2b2250;
+      border-radius: 20px;
+      padding: 26px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+      border: 1px solid rgba(175,91,251,0.15);
+      transition: transform 0.3s, box-shadow 0.3s;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 40px rgba(175,91,251,0.25);
+    }
+
+    .card-icon { font-size: 34px; }
+
+    .card h2 {
+      font-size: 20px;
+      font-weight: 700;
+      color: #f1eaff;
+    }
+
+    .card-meta {
+      font-size: 12px;
+      color: #a08dc0;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .card-meta span { font-size: 14px; }
+
+    .card p {
+      font-size: 13.5px;
+      line-height: 1.75;
+      color: #c9bfea;
+      flex: 1;
+    }
+    .card ul {
+      padding-left: 16px;
+      font-size: 13px;
+      line-height: 1.8;
+      color: #c9bfea;
+      flex: 1;
+    }
+    .card ul li { margin-bottom: 4px; }
+
+    .tech-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+    .tag {
+      background: rgba(175,91,251,0.18);
+      border: 1px solid #af5bfb;
+      color: #d2a8ff;
+      font-size: 11px;
+      padding: 3px 11px;
+      border-radius: 20px;
+      font-weight: 600;
+    }
+
+    .card-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 4px;
+    }
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      color: #af5bfb;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 5px 14px;
+      border-radius: 20px;
+      border: 1px solid rgba(175,91,251,0.35);
+      transition: background 0.3s, color 0.3s;
+    }
+    .card-link:hover {
+      background: #af5bfb;
+      color: #fff;
+    }
+
+    /* Internship card accent */
+    .internship-card {
+      border-left: 3px solid #af5bfb;
+    }
+
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      .container { padding: 0 16px 60px; }
+      .page-title { font-size: 24px; padding: 10px 22px; }
+      .section-badge { font-size: 20px; padding: 8px 18px; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="top-nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="projects.html">Projects & Hackathons</a></li>
+      <li><a href="certifications.html" class="active">Certifications & Internship</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <div class="page-title">Certifications & Achievements</div>
+
+    <div class="section-label">📜 Certifications</div>
+    <div class="cert-grid">
+      
+      <div class="cert-card">
+        <div class="cert-icon">🌐</div>
+        <h3>Front-end Web Development</h3>
+        <div class="cert-issuer">Reliance Foundation</div>
+        <div class="cert-date">May 2025</div>
+        <div class="cert-badge">Web Development</div>
+      </div>
+      
+      <div class="cert-card">
+        <div class="cert-icon">🛡️</div>
+        <h3>Deloitte Australia – Cyber Job Simulation</h3>
+        <div class="cert-issuer">Forage</div>
+        <div class="cert-date">May 2025</div>
+        <div class="cert-badge">Cyber Security</div>
+      </div>
+      
+      <div class="cert-card">
+        <div class="cert-icon">🍃</div>
+        <h3>MongoDB Schema Design Optimization</h3>
+        <div class="cert-issuer">MongoDB</div>
+        <div class="cert-date">2025</div>
+        <div class="cert-badge">Skill Badge</div>
+      </div>
+      
+      
+      <div class="cert-card">
+        <div class="cert-icon">📄</div>
+        <h3>HTML & CSS Certificate</h3>
+        <div class="cert-issuer">LetsUpgrade</div>
+        <div class="cert-date">May 2025</div>
+        <div class="cert-badge">Frontend</div>
+      </div>
+      
+      <div class="cert-card">
+        <div class="cert-icon">☕</div>
+        <h3>Java Certificate</h3>
+        <div class="cert-issuer">LetsUpgrade</div>
+        <div class="cert-date">April 2025</div>
+        <div class="cert-badge">Programming</div>
+      </div>
+      
+      
+      <div class="cert-card">
+        <div class="cert-icon">🤖</div>
+        <h3>GEN AI Skill Development Program</h3>
+        <div class="cert-issuer">NASSCOM</div>
+        <div class="cert-date">2025</div>
+        <div class="cert-badge">Generative AI</div>
+      </div>
+      
+      <div class="cert-card">
+        <div class="cert-icon">☁️</div>
+        <h3>AWS APAC – Solutions Architecture Job Simulation</h3>
+        <div class="cert-issuer">Forage</div>
+        <div class="cert-date">May 2025</div>
+        <div class="cert-badge">Cloud Architecture</div>
+      </div>
+    </div>
+
+    <!-- ===== INTERNSHIPS ===== -->
+    <div class="section-header">
+      <div class="section-badge">💼 Internships</div>
+      <!-- <div class="section-line"></div> -->
+    </div>
+
+    <div class="cards-grid">
+
+      <div class="card internship-card">
+        <div class="card-icon">☕</div>
+        <h2>Java Programming Intern</h2>
+        <div class="card-meta"><span>🏢</span> Vault Of Codes &nbsp;|&nbsp; <span>📅</span> Jun 2025 &nbsp;|&nbsp; Remote</div>
+        <ul>
+          <li>Developed enterprise-grade Java applications implementing OOP principles and design patterns (Singleton, Factory, Observer) with SOLID architecture</li>
+          <li>Engineered optimized algorithms using advanced data structures (HashMaps, Trees, Graphs), reducing code complexity by O(n) in critical operations</li>
+          <li>Collaborated in Agile sprints, conducted code reviews, and implemented unit tests using JUnit to ensure 95% code coverage</li>
+          <li>Built RESTful APIs for backend services handling concurrent requests with proper exception handling and logging mechanisms</li>
+        </ul>
+        <div class="tech-tags">
+          <span class="tag">Java</span>
+          <span class="tag">OOP</span>
+          <span class="tag">SOLID</span>
+          <span class="tag">JUnit</span>
+          <span class="tag">REST APIs</span>
+        </div>
+      </div>
+
+      <div class="card internship-card">
+        <div class="card-icon">🐍</div>
+        <h2>Python Programming Intern</h2>
+        <div class="card-meta"><span>🏢</span> CodSoft &nbsp;|&nbsp; <span>📅</span> Sep – Oct 2024 &nbsp;|&nbsp; Remote</div>
+        <ul>
+          <li>Developed Python applications leveraging the Flask framework for web-based solutions with MySQL database integration</li>
+          <li>Automated data processing workflows using Python scripts, reducing manual processing time by 60% with efficient pandas operations</li>
+          <li>Implemented machine learning algorithms for data analysis projects using NumPy and scikit-learn libraries</li>
+          <li>Debugged and optimized existing codebases, improving runtime performance by 40% through algorithmic improvements</li>
+        </ul>
+        <div class="tech-tags">
+          <span class="tag">Python</span>
+          <span class="tag">Flask</span>
+          <span class="tag">MySQL</span>
+          <span class="tag">pandas</span>
+          <span class="tag">NumPy</span>
+          <span class="tag">scikit-learn</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>
